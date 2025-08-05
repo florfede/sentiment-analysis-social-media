@@ -1,6 +1,6 @@
 # 💬 Sentiment Analysis on Social Media using RoBERTa
 
-This project uses Natural Language Processing (NLP) to classify the sentiment of comments from Instagram and Twitter about music artists. The goal is to monitor fan perception and extract actionable insights.
+This project uses Natural Language Processing (NLP) to classify the sentiment of comments from Instagram about music artists. The goal is to monitor fan perception and extract actionable insights.
 
 ---
 
@@ -8,7 +8,7 @@ This project uses Natural Language Processing (NLP) to classify the sentiment of
 
 Understanding fan sentiment helps identify trends, assess artist reputation, and enhance decision-making in marketing and A&R.
 
-We use a transformer-based model to label comments as:
+A transformer-based model is used to label comments as:
 
 - ✅ Positive
 - ➖ Neutral
