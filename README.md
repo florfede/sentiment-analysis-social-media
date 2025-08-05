@@ -1,59 +1,89 @@
 # 💬 Sentiment Analysis on Social Media using RoBERTa
 
-This project applies Natural Language Processing (NLP) techniques to classify sentiment in social media comments related to music artists. The goal is to quantify public perception and analyze how sentiment correlates with engagement or revenue trends.
+This project uses Natural Language Processing (NLP) to classify the sentiment of comments from Instagram and Twitter about music artists. The goal is to monitor fan perception and extract actionable insights.
 
 ---
 
 ## 🧠 Project Overview
 
-Understanding how fans feel about an artist can provide valuable insights for marketing, forecasting, and A&R strategies. In this project, we use state-of-the-art transformer models to analyze sentiment in Instagram and Twitter comments.
+Understanding fan sentiment helps identify trends, assess artist reputation, and enhance decision-making in marketing and A&R.
 
-- ✅ Pretrained model: RoBERTa fine-tuned for sentiment analysis
-- 🔍 Goal: Classify comments as **positive**, **neutral**, or **negative**
-- 📊 Optional: Aggregate sentiment over time to use in forecasting models
+We use a transformer-based model to label comments as:
 
----
-
-## 📁 Dataset
-
-The dataset contains real or synthetic social media comments related to artists, including:
-
-- `artist_id`: unique artist identifier
-- `comment`: social media comment text
-- `date`: date of the comment (optional)
-- `platform`: Instagram or Twitter
-
-> 📁 An example dataset is available in the `data/` folder.
+- ✅ Positive
+- ➖ Neutral
+- ❌ Negative
 
 ---
 
-## 🤖 Model & Methodology
+## 🤖 Model
 
-- We use the `cardiffnlp/twitter-roberta-base-sentiment` model from HuggingFace
-- The model returns scores for `positive`, `neutral`, and `negative` classes
-- Results are aggregated per artist or time period as needed
-
-Steps:
-1. Preprocess text (remove emojis, links, usernames, etc.)
-2. Tokenize and feed into RoBERTa
-3. Extract predicted label and confidence
-4. Aggregate and visualize
+- **Model used**: `cardiffnlp/twitter-roberta-base-sentiment` from HuggingFace
+- **Type**: Fine-tuned RoBERTa for sentiment classification
+- **Pipeline**:
+  1. Clean text (remove URLs, emojis, tags)
+  2. Tokenize
+  3. Predict label and confidence
 
 ---
 
-## 📈 Example Output
+## 📁 Folder Structure
 
-| comment                                 | label     | confidence |
-|-----------------------------------------|-----------|------------|
-| "I love her new track so much!"         | positive  | 0.98       |
-| "He's ok I guess."                      | neutral   | 0.73       |
-| "Worst concert I've ever been to..."    | negative  | 0.96       |
+```
+sentiment-analysis-social-media/
+│
+├── data/              # Example comment data
+├── notebooks/         # Sentiment analysis notebook
+├── outputs/           # Predictions and plots
+├── src/               # Text preprocessing scripts (optional)
+├── requirements.txt   # Python dependencies
+└── README.md
+```
 
 ---
 
-## 📦 How to Run
+## 📊 Example Output
+
+| Comment                                 | Label    | Confidence |
+|-----------------------------------------|----------|------------|
+| I love this song so much!               | Positive | 0.96       |
+| Not bad, not great.                     | Neutral  | 0.72       |
+| What a terrible performance 😤          | Negative | 0.94       |
+
+---
+
+## 🧪 How to Run
 
 1. Clone the repo:
-   ```bash
-   git clone https://github.com/tu-usuario/sentiment-analysis-social-media.git
-   cd sentiment-analysis-social-media
+```bash
+git clone https://github.com/tu-usuario/sentiment-analysis-social-media.git
+cd sentiment-analysis-social-media
+```
+
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+3. Run the notebook:
+```bash
+jupyter notebook notebooks/sentiment_analysis_roberta.ipynb
+```
+
+---
+
+## 📚 Tech Stack
+
+- Python
+- HuggingFace Transformers
+- RoBERTa
+- pandas / numpy
+- matplotlib / seaborn
+
+---
+
+## 👩‍💻 Author
+
+**Florencia Federico**  
+Data & Machine Learning Engineer  
+[LinkedIn](https://www.linkedin.com/in/florenciafederico88/)
