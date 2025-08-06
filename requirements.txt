@@ -1,0 +1,9 @@
+pandas
+pyodbc
+torch
+transformers
+scipy
+emoji
+regex
+sentencepiece
+protobuf
